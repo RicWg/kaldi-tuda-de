@@ -19,7 +19,9 @@
 
 # Set bash to 'debug' mode, it prints the commands (option '-x') and exits on :
 # -e 'error', -u 'undefined variable', -o pipefail 'error in pipeline',
-set -euxo pipefail
+
+# Richard changed : set -euxov pipefail
+set -vx
 
 stage=0
 use_BAS_dictionaries=false
@@ -63,9 +65,9 @@ g2p_dir=data/local/g2p${dict_suffix}
 lm_dir=data/local/lm${dict_suffix}
 arpa_lm=${lm_dir}/4gram-mincount/lm_pr20.0.gz
 
-[ ! -L "steps" ] && ln -s ../../wsj/s5/steps
-[ ! -L "utils" ] && ln -s ../../wsj/s5/utils
-[ ! -L "rnnlm" ] && ln -s ../../../scripts/rnnlm/
+[ ! -L "steps" ] && ln -s /opt/kalid/egs/wsj/s5/steps
+[ ! -L "utils" ] && ln -s /opt/kalid/egs/wsj/s5/utils
+[ ! -L "rnnlm" ] && ln -s /opt/kalid/scripts/rnnlm/
 
 . utils/parse_options.sh
 
