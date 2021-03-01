@@ -65,9 +65,9 @@ g2p_dir=data/local/g2p${dict_suffix}
 lm_dir=data/local/lm${dict_suffix}
 arpa_lm=${lm_dir}/4gram-mincount/lm_pr20.0.gz
 
-[ ! -L "steps" ] && ln -s /opt/kalid/egs/wsj/s5/steps
-[ ! -L "utils" ] && ln -s /opt/kalid/egs/wsj/s5/utils
-[ ! -L "rnnlm" ] && ln -s /opt/kalid/scripts/rnnlm/
+[ ! -L "steps" ] && ln -s /opt/kaldi/egs/wsj/s5/steps
+[ ! -L "utils" ] && ln -s /opt/kaldi/egs/wsj/s5/utils
+[ ! -L "rnnlm" ] && ln -s /opt/kaldi/scripts/rnnlm/
 
 . utils/parse_options.sh
 
