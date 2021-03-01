@@ -107,7 +107,7 @@ if [ $stage -le 1 ]; then
   then
       # wget --directory-prefix=data/wav/ $kaldi_tuda_de_corpus_server/german-speechdata-package-v2.tar.gz
       # cp $Dataset/german-speechdata-package-v2.tar.gz data/wav/ 
-      mkdir data/wav/
+      mkdir -p data/wav/
       cd data/wav/
       tar xvfz $Dataset/german-speechdata-package-v2.tar.gz
       cd ../../
