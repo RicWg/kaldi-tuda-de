@@ -49,10 +49,12 @@ make_sure_path_exists(data_local_dict_dir)
 if not os.path.exists('exp/') and not os.path.exists('mfcc/'):
     default_dir = '/srv/data/speech/tuda_kaldi_de/'
     
-    myinput = ''
-    while(myinput != 'y' and myinput != 'n'):
-        myinput = input('Do you want to symlink big data directories (features, models, wavs) to another path than the current directory? (y/n) ')
-    
+    # Richard commented out for autoscript
+    # myinput = ''
+    # while(myinput != 'y' and myinput != 'n'):
+    #    myinput = input('Do you want to symlink big data directories (features, models, wavs) to another path than the current directory? (y/n) ')
+    myinput = 'n'
+
     data_dir = '.'
     mfcc_dir_src = data_dir + '/mfcc/'
     exp_dir_src = data_dir + '/exp/'
