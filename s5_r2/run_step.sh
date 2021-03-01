@@ -107,6 +107,7 @@ if [ $stage -le 1 ]; then
   then
       # wget --directory-prefix=data/wav/ $kaldi_tuda_de_corpus_server/german-speechdata-package-v2.tar.gz
       # cp $Dataset/german-speechdata-package-v2.tar.gz data/wav/ 
+      mkdir data/wav/
       cd data/wav/
       tar xvfz $Dataset/german-speechdata-package-v2.tar.gz
       cd ../../
@@ -192,6 +193,9 @@ RAWDATA=data/wav/german-speechdata-package-v2
 
 # Filter by name
 FILTERBYNAME="*.xml"
+
+echo "stage 1 done, exit....."
+exit 1
 
 if [ $stage -le 2 ]; then
   # Move files, which would later produce errors. They are saved in backup location
