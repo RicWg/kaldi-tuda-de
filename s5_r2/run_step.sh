@@ -106,9 +106,9 @@ if [ $stage -le 1 ]; then
   if [ ! -d data/wav/german-speechdata-package-v2 ]
   then
       # wget --directory-prefix=data/wav/ $kaldi_tuda_de_corpus_server/german-speechdata-package-v2.tar.gz
-      cp $Dataset/german-speechdata-package-v2.tar.gz data/wav/ 
+      # cp $Dataset/german-speechdata-package-v2.tar.gz data/wav/ 
       cd data/wav/
-      tar xvfz german-speechdata-package-v2.tar.gz
+      tar xvfz $Dataset/german-speechdata-package-v2.tar.gz
       cd ../../
   fi
 
@@ -120,9 +120,9 @@ if [ $stage -le 1 ]; then
     then
       mkdir -p data/wav/swc/
       # wget --directory-prefix=data/wav/swc/ $kaldi_tuda_de_corpus_server/SWC_German.tar
-      cp $Dataset/SWC_German.tar data/wav/swc/
+      # cp $Dataset/SWC_German.tar data/wav/swc/
       cd data/wav/swc/
-      tar xvf SWC_German.tar
+      tar xvf $Dataset/SWC_German.tar
       cd ../../../
     fi
 
@@ -140,9 +140,9 @@ if [ $stage -le 1 ]; then
     if [ ! -d data/swc_train ]
     then
       # wget --directory-prefix=data/ $kaldi_tuda_de_corpus_server/swc_train_v2.tar.gz
-      cp $Dataset/swc_train_v2.tar.gz data/
+      # cp $Dataset/swc_train_v2.tar.gz data/
       cd data/
-      tar xvfz swc_train_v2.tar.gz
+      tar xvfz $Dataset/swc_train_v2.tar.gz
       cd ../
     fi
 
@@ -154,9 +154,9 @@ if [ $stage -le 1 ]; then
     then
       mkdir -p data/wav/m_ailabs/
       # wget --directory-prefix=data/wav/m_ailabs/ $kaldi_tuda_de_corpus_server/m-ailabs.bayern.de_DE.tgz
-      cp $Dataset//m-ailabs.bayern.de_DE.tgz data/wav/m_ailabs/
+      # cp $Dataset//m-ailabs.bayern.de_DE.tgz data/wav/m_ailabs/
       cd data/wav/m_ailabs/
-      tar xvfz m-ailabs.bayern.de_DE.tgz
+      tar xvfz $Dataset/m-ailabs.bayern.de_DE.tgz
       cd ../../../
     fi
     if [ ! -d data/m_ailabs_train ]
@@ -172,9 +172,9 @@ if [ $stage -le 1 ]; then
     then
        mkdir -p data/wav/cv/
        # wget --directory-prefix=data/wav/cv/ $kaldi_tuda_de_corpus_server/cv-corpus-3-oct19-de.tar.gz
-       cp $Dataset/cv-corpus-3-oct19-de.tar.gz data/wav/cv/
+       # cp $Dataset/cv-corpus-3-oct19-de.tar.gz data/wav/cv/
        cd data/wav/cv/
-       tar xvfz cv-corpus-3-oct19-de.tar.gz
+       tar xvfz $Dataset/cv-corpus-3-oct19-de.tar.gz
        cd ../../../
     fi
     if [ ! -d data/commonvoice_train ]
