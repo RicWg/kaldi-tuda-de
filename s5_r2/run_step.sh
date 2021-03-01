@@ -197,6 +197,10 @@ FILTERBYNAME="*.xml"
 echo "stage 1 done, exit....."
 exit 1
 
+# Richard added for python env
+export LANG=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
+
 if [ $stage -le 2 ]; then
   # Move files, which would later produce errors. They are saved in backup location
   python3 local/move_files_to_skip.py data/wav/german-speechdata-package-v2/train/
