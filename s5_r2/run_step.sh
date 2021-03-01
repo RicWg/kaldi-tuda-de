@@ -97,13 +97,16 @@ utf8()
     mv $1.tmp $1
 }
 
+Dataset=/storage2/dataset/tude-de/ 
+
 if [ $stage -le 1 ]; then
   # Prepares KALDI dir structure and asks you where to store mfcc vectors and the final models (both can take up significant space)
   python3 local/prepare_dir_structure.py
 
   if [ ! -d data/wav/german-speechdata-package-v2 ]
   then
-      wget --directory-prefix=data/wav/ $kaldi_tuda_de_corpus_server/german-speechdata-package-v2.tar.gz
+      # wget --directory-prefix=data/wav/ $kaldi_tuda_de_corpus_server/german-speechdata-package-v2.tar.gz
+      cp $Dataset/german-speechdata-package-v2.tar.gz data/wav/ 
       cd data/wav/
       tar xvfz german-speechdata-package-v2.tar.gz
       cd ../../
@@ -116,7 +119,8 @@ if [ $stage -le 1 ]; then
     if [ ! -d data/wav/swc/german/ ]
     then
       mkdir -p data/wav/swc/
-      wget --directory-prefix=data/wav/swc/ $kaldi_tuda_de_corpus_server/SWC_German.tar
+      # wget --directory-prefix=data/wav/swc/ $kaldi_tuda_de_corpus_server/SWC_German.tar
+      cp $Dataset/SWC_German.tar data/wav/swc/
       cd data/wav/swc/
       tar xvf SWC_German.tar
       cd ../../../
@@ -135,7 +139,8 @@ if [ $stage -le 1 ]; then
 # But the default is currently to download the precomputed SWC data dir (285h version, minimally pruned):
     if [ ! -d data/swc_train ]
     then
-      wget --directory-prefix=data/ $kaldi_tuda_de_corpus_server/swc_train_v2.tar.gz
+      # wget --directory-prefix=data/ $kaldi_tuda_de_corpus_server/swc_train_v2.tar.gz
+      cp $Dataset/swc_train_v2.tar.gz data/
       cd data/
       tar xvfz swc_train_v2.tar.gz
       cd ../
@@ -148,7 +153,8 @@ if [ $stage -le 1 ]; then
     if [ ! -d data/wav/m_ailabs/ ]
     then
       mkdir -p data/wav/m_ailabs/
-      wget --directory-prefix=data/wav/m_ailabs/ $kaldi_tuda_de_corpus_server/m-ailabs.bayern.de_DE.tgz
+      # wget --directory-prefix=data/wav/m_ailabs/ $kaldi_tuda_de_corpus_server/m-ailabs.bayern.de_DE.tgz
+      cp $Dataset//m-ailabs.bayern.de_DE.tgz data/wav/m_ailabs/
       cd data/wav/m_ailabs/
       tar xvfz m-ailabs.bayern.de_DE.tgz
       cd ../../../
@@ -165,7 +171,8 @@ if [ $stage -le 1 ]; then
     if [ ! -d data/wav/cv/ ]
     then
        mkdir -p data/wav/cv/
-       wget --directory-prefix=data/wav/cv/ $kaldi_tuda_de_corpus_server/cv-corpus-3-oct19-de.tar.gz
+       # wget --directory-prefix=data/wav/cv/ $kaldi_tuda_de_corpus_server/cv-corpus-3-oct19-de.tar.gz
+       cp $Dataset/cv-corpus-3-oct19-de.tar.gz data/wav/cv/
        cd data/wav/cv/
        tar xvfz cv-corpus-3-oct19-de.tar.gz
        cd ../../../
