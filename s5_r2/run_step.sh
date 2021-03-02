@@ -97,7 +97,9 @@ utf8()
     mv $1.tmp $1
 }
 
+# Richard added
 Dataset=/storage2/dataset/tuda-de/ 
+source path.sh
 
 if [ $stage -le 1 ]; then
   # Prepares KALDI dir structure and asks you where to store mfcc vectors and the final models (both can take up significant space)
